@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário do Rolê 🎉</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-4 sm:py-8">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+            <!-- Páginas do formulário -->
+            <div id="pages" class="relative">
+                <!-- Página de Capa -->
+                <div class="page active" id="cover">
+                    <div class="p-4 sm:p-8 text-center">
+                        <h1 class="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-gray-800">🎉 Rolê de Hoje 🎉</h1>
+                        <p class="text-lg sm:text-xl mb-4 sm:mb-6 text-gray-600">Formulário dos Bagaceiros</p>
+                        <div class="flex justify-center mb-6 sm:mb-8">
+                            <img src="baga.png" alt="Baga" class="w-32 sm:w-40 h-auto animate-bounce">
+                        </div>
+                        <button onclick="nextPage()" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition-colors text-lg">
+                            Bora Começar! 🚀
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pergunta 1 -->
+                <div class="page hidden" id="q1">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold mb-4">Você vai pro fervo hoje? 🤔</h2>
+                        <div class="space-y-4">
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q1" value="sim" class="mr-2"> Sim
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q1" value="nao" class="mr-2"> Não
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q1" value="talvez" class="mr-2"> Talvez, depende do pix 🙏
+                            </label>
+                        </div>
+                        <div class="mt-6 flex justify-between">
+                            <button onclick="prevPage()" class="bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-gray-600 transition-colors text-sm sm:text-base">⬅️ Voltar</button>
+                            <button onclick="nextPage()" class="bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-blue-700 transition-colors text-sm sm:text-base">Próxima ➡️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="page hidden" id="q2">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold mb-4">Em que nível de sobriedade você está? 🍺</h2>
+                        <div class="space-y-4">
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="sobrio" class="mr-2"> Totalmente sóbrio 😇
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="calibrado" class="mr-2"> Levemente calibrado 🤪
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="grau" class="mr-2"> Já tô no grau 🥴
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q2" value="perdido" class="mr-2"> Que dia é hoje? 🤯
+                            </label>
+                        </div>
+                        <div class="mt-6 flex justify-between">
+                            <button onclick="prevPage()" class="bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-gray-600 transition-colors text-sm sm:text-base">⬅️ Voltar</button>
+                            <button onclick="nextPage()" class="bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-blue-700 transition-colors text-sm sm:text-base">Próxima ➡️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="page hidden" id="q3">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold mb-4">Tá com grana hoje? 💰</h2>
+                        <div class="space-y-4">
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="tranquilo" class="mr-2"> Tô tranquilo 💅
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="apertado" class="mr-2"> Tô meio apertado 😅
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="fe" class="mr-2"> Vou na fé 🙌
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q3" value="pix" class="mr-2"> Pix, por favor 🥺
+                            </label>
+                        </div>
+                        <div class="mt-6 flex justify-between">
+                            <button onclick="prevPage()" class="bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-gray-600 transition-colors text-sm sm:text-base">⬅️ Voltar</button>
+                            <button onclick="nextPage()" class="bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-blue-700 transition-colors text-sm sm:text-base">Próxima ➡️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 4 -->
+                <div class="page hidden" id="q4">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold mb-4">Promete que hoje não vai arrumar confusão? 🤝</h2>
+                        <div class="space-y-4">
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="prometo" class="mr-2"> Prometo de dedinho 🤙
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="mexer" class="mr-2"> Só se mexerem comigo 👊
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="naogaranto" class="mr-2"> Não garanto nada 😈
+                            </label>
+                            <label class="block p-4 bg-purple-100 rounded-lg hover:bg-purple-200 cursor-pointer transition-colors">
+                                <input type="radio" name="q4" value="espelho" class="mr-2"> Já comecei discutindo com o espelho 🪞
+                            </label>
+                        </div>
+                        <div class="mt-6 flex justify-between">
+                            <button onclick="prevPage()" class="bg-gray-500 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-gray-600 transition-colors text-sm sm:text-base">⬅️ Voltar</button>
+                            <button onclick="nextPage()" class="bg-blue-600 text-white px-3 sm:px-4 py-2 rounded-full hover:bg-blue-700 transition-colors text-sm sm:text-base">Próxima ➡️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pergunta 5 -->
+                <div class="page hidden" id="q5">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold mb-4">Algo a declarar antes do rolê? 📢</h2>
+                        <textarea class="w-full p-4 border-2 border-purple-300 rounded-lg focus:border-purple-500 focus:outline-none" rows="4" placeholder="Desabafa aí..."></textarea>
+                        <div class="mt-6 flex justify-between">
+                            <button onclick="prevPage()" class="bg-gray-500 text-white px-4 py-2 rounded-full hover:bg-gray-600 transition-colors">⬅️ Voltar</button>
+                            <button onclick="submitForm()" class="bg-green-600 text-white px-4 sm:px-6 py-2 rounded-full hover:bg-green-700 transition-colors text-sm sm:text-base">Enviar! 🚀</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+
+        function showPage(index) {
+            pages.forEach(page => page.classList.add('hidden'));
+            pages[index].classList.remove('hidden');
+        }
+
+        function nextPage() {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+
+        function submitForm() {
+            alert('Formulário enviado! 🎉\nBora pro rolê! 🕺💃');
+            currentPage = 0;
+            showPage(currentPage);
+        }
+    </script>
+</body>
+</html>
